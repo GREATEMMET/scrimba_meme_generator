@@ -7,7 +7,7 @@ import Display from "../Display/Display";
 
 export default function Wrapper() {
   return (
-    <div>
+    <div className="wrapper">
       <Navbar />
       <div className="main">
         <Generator />

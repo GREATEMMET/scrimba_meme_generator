@@ -1,0 +1,30 @@
+@import "/src/variables";
+
+.navbar {
+  background: $bg-gradient;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-inline: 20px;
+}
+
+.navLogo {
+  width: 31px;
+  height: 26px;
+  object-fit: cover;
+}
+
+.navTitle {
+  color: $color-white;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.1em;
+}
+
+.navProject {
+  margin-left: auto;
+  color: $color-white;
+  font-size: 12px;
+  font-weight: 500;
+}
