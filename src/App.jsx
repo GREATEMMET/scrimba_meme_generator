@@ -1,11 +1,13 @@
-
 import React from "react";
 import "./App.scss";
+
+import Wrapper from './components/Wrapper/Wrapper'
+
 
 export default function App() {
   return (
     <div>
-      <h1>App</h1>
+      <Wrapper/>
     </div>
   );
 }
