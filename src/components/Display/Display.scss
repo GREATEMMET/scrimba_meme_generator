@@ -1,0 +1,31 @@
+@import "../../variables";
+
+.display {
+  width: 100%;
+  position: relative;
+  text-align: center;
+
+  h1 {
+    color: $color-white;
+    text-shadow: 1px 1px 5px black;
+  }
+}
+
+.memeImg {
+  width: 100%;
+  display: inline-block;
+  object-fit: cover;
+}
+
+.topDisplay {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottomDisplay {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}

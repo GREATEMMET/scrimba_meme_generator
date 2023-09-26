@@ -11,7 +11,7 @@ export default function Wrapper() {
       <Navbar />
       <div className="main">
         <Generator />
-        <Display />
+        
       </div>
     </div>
   );
