@@ -24,6 +24,7 @@ export default function Generator() {
           className="bottomText"
         />
       </div>
+      
       <p className="generateBtn" onClick={generateImg}>
         Get a new meme image 🖼
       </p>
