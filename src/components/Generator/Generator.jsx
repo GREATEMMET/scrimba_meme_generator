@@ -31,6 +31,7 @@ export default function Generator() {
   return (
     <div className="generator">
       <div className="inputField">
+
         <input
           type="text"
           placeholder="Enter top text"
@@ -39,6 +40,7 @@ export default function Generator() {
           value={text.topText}
           name="topText"
         />
+
         <input
           type="text"
           placeholder="Enter bottom text"
@@ -47,6 +49,7 @@ export default function Generator() {
           value={text.bottomText}
           name="bottomText"
         />
+
       </div>
 
       <p className="generateBtn" onClick={generateImg}>
@@ -54,6 +57,7 @@ export default function Generator() {
       </p>
 
       <Display meme={meme} text={text} />
+      
     </div>
   );
 }
