@@ -7,20 +7,24 @@ import memesData from "../../data/memesData";
 export default function Generator() {
   const memes = memesData.data.memes;
 
-  const [meme, setMeme] = React.useState("");
-  const [text, setText] = React.useState({
+  const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
+    memeImg: ""
   });
 
   function generateImg() {
     const randomNum = Math.floor(Math.random() * memes.length);
-    setMeme(memes[randomNum]);
+
+    setMeme((prevState) => ({
+      ...prevState,
+      memeImg: memes[randomNum],
+    }));
   }
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setText((prevState) => {
+    setMeme((prevState) => {
       return {
         ...prevState,
         [name]: value,
@@ -31,13 +35,12 @@ export default function Generator() {
   return (
     <div className="generator">
       <div className="inputField">
-
         <input
           type="text"
           placeholder="Enter top text"
           className="topText"
           onChange={handleChange}
-          value={text.topText}
+          value={meme.topText}
           name="topText"
         />
 
@@ -46,18 +49,16 @@ export default function Generator() {
           placeholder="Enter bottom text"
           className="bottomText"
           onChange={handleChange}
-          value={text.bottomText}
+          value={meme.bottomText}
           name="bottomText"
         />
-
       </div>
 
       <p className="generateBtn" onClick={generateImg}>
         Get a new meme image 🖼
       </p>
 
-      <Display meme={meme} text={text} />
-      
+      <Display meme={meme} />
     </div>
   );
 }
