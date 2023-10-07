@@ -13,6 +13,7 @@ export default function Generator() {
     memeImg: ""
   });
 
+
   function generateImg() {
     const randomNum = Math.floor(Math.random() * memes.length);
 
@@ -22,6 +23,7 @@ export default function Generator() {
     }));
   }
 
+  
   function handleChange(event) {
     const { name, value } = event.target;
     setMeme((prevState) => {
