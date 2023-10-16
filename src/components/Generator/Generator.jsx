@@ -2,8 +2,6 @@ import React from "react";
 import "./Generator.scss";
 import Display from "../Display/Display";
 
-import memesData from "../../data/memesData";
-
 export default function Generator() {
   const [memesData, setMemesData] = React.useState([]);
 
