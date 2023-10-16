@@ -5,25 +5,24 @@ import Display from "../Display/Display";
 import memesData from "../../data/memesData";
 
 export default function Generator() {
-  const memes = memesData.data.memes;
+  const [memesData, setMemesData] = React.useState([]);
 
   const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
-    memeImg: ""
+    memeImg: "",
   });
 
-
   function generateImg() {
-    const randomNum = Math.floor(Math.random() * memes.length);
+    const randomNum = Math.floor(Math.random() * memesData.length);
+    let url = memesData[randomNum].url;
 
     setMeme((prevState) => ({
       ...prevState,
-      memeImg: memes[randomNum],
+      memeImg: url,
     }));
   }
 
-  
   function handleChange(event) {
     const { name, value } = event.target;
     setMeme((prevState) => {
@@ -33,6 +32,12 @@ export default function Generator() {
       };
     });
   }
+
+  React.useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => setMemesData(data.data.memes));
+  }, []);
 
   return (
     <div className="generator">
